@@ -17,7 +17,9 @@ def main():
 
     elif args.mode == "ingest":
         from src.ingestion.pipeline import run_ingestion
+        from src.retrieval.vector_store import build_index
         run_ingestion()
+        build_index()
 
     elif args.mode == "frontend":
         import subprocess, sys
